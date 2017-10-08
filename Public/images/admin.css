@@ -1,0 +1,153 @@
+*{ padding: 0; margin: 0;font-size:12px; font-family: "微软雅黑"} 
+div{ padding: 3px 20px;} 
+body{ background: #fff; color: #333;}
+h2{font-size:36px}
+div.result{border:1px solid #d4d4d4; background:#FFC;color:#393939; padding:8px 10px;float:auto; margin:2px}
+a{text-decoration:none; color:gray;}
+a:hover{color:#F60;}
+div.page{border:1px solid #d4d4d4; background:#333;color:white; padding:5px 15px;float:auto;margin:2px;text-align:right}
+.tableform {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border-color: #DDDDDD #BEC6CE #BEC6CE #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.division {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #CCCCCC #BEC6CE #BEC6CE #CCCCCC;
+    border-style: solid;
+    border-width: 1px 2px 2px 1px;
+    line-height: 150%;
+    margin: 10px;
+    padding: 5px;
+    white-space: normal;
+}
+.division td {
+    border-color: #FFFFFF #DBE2E7 #DDDDDD #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #DBE2E7;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    vertical-align: top;
+}
+.tableAction {
+    clear: both;
+    margin: 5px auto;
+    width: auto;
+}
+.division th {
+    background: none repeat scroll 0 0 #E2E8EB;
+    border-right: 1px solid #CCCCCC;
+    font-size: 14px;
+    text-align: right;
+    white-space: nowrap;
+    width: 140px;
+}
+.actionBar {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 3px solid #6F777A;
+    border-top: 1px solid #FFFFFF;
+    line-height: 30px;
+    padding: 0 8px;
+}
+.actionItems .functop {
+    height: 20px;
+    line-height: 28px;
+    padding-top: 3px;
+}
+.actionItems table td {
+    width: auto;
+}
+.mainHead td, .mainHead th {
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.sysiconBtn {
+    background: url("../images/sysicon.gif") no-repeat scroll 0 0 #E2E8EB;
+    border-color: #FFFFFF #BEC6CE #BEC6CE #FFFFFF;
+    border-style: solid;
+    border-width: 1px 2px 2px 1px;
+    color: #000000;
+    cursor: pointer;
+    display: inline;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 1px 3px 0 0;
+    outline: medium none;
+    padding: 4px 4px 2px 20px;
+    text-decoration: none;
+}
+.actionBar table {
+    margin: 0;
+    width: auto;
+}
+table {
+    width: 100%;
+}
+table, td, th {
+    vertical-align: middle;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;
+    font-family: inherit;
+    
+    font-style: inherit;
+    /*font-weight: inherit;*/
+    
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.actionItems {
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #BEC6CE;
+    border-top: 1px solid #FFFFFF;
+    height: 65px;
+    margin: 0;
+    padding: 0 3px;
+}
+element.style {
+    padding-left: 4px;
+}
+.arrow-down {
+    background-image: url("../images/arrow-down.gif");
+}
+.arrow-up, .arrow-down, .arrow-left, .arrow-right {
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
+    padding-right: 20px;
+}
+
+.sysiconBtnNoIcon {
+    background: none repeat scroll 0 0 #E2E8EB;
+    border-color: #FFFFFF #BEC6CE #BEC6CE #FFFFFF;
+    border-style: solid;
+    border-width: 1px 2px 2px 1px;
+    color: #000000;
+    cursor: pointer;
+    display: inline;
+    font-weight: normal;
+    margin: 0 0 0 3px;
+    padding: 4px 4px 2px;
+    text-decoration: none;
+}
+
+.lnk {
+    color: #000099;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.finder-filter-pos {
+    background: url("sysrightbackgroud.gif") repeat-x scroll 0 0 #E7EFF4;
+    border: 2px solid #666666;
+    padding: 3px;
+}

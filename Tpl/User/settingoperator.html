@@ -1,0 +1,67 @@
+
+<link href="/public/images/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/public/jquery-1.10.2.js"></script>
+<style>
+td{font-size: 12px;}
+table{border: 0;border-collapse: collapse;} 
+tr{height: 25px;}
+.ou{background-color: #CCC;} 
+.dan{background-color: #EFEFEF;}  
+.ed{background-color: #FFFFFF;}        
+</style>
+<script type="text/javascript">
+    function todel(){
+    if(confirm("确定删除吗?")){
+        return true;
+        }else return false;
+    } 
+    
+</script>	
+<body>
+<div >
+<h1>管理员用户管理</h1>
+<!--<div class="result">可以更改配置文件中的<b>URL_MODEL</b>和<b>URL_PATHINFO_DEPR</b>参数查看分页链接的区别。</div>-->
+<div><a href="?act=add">新增</a></div>
+<table>
+    <tr><th>操作</th><th>用户名</th><th>姓名</th><th>最后登录时间</th></tr>    
+<volist name="list" id="vo">
+<tr>
+<td><a href="?act=edit&id={$vo.op_id}">[编辑]</a> 
+    <if condition="$super lt 1 ">      
+            <else/>
+    <a href="?act=del&id={$vo.op_id}" onclick="return todel()">[删除]</a>
+    </if>
+</td>
+<td><a href="__ROOT__/admin.php/User/change/user/{$vo.username}">{$vo.username}</a></td>
+<td>{$vo.name}</td>
+<td><span style="color:gray">[ {$vo.lastlogin|date='Y-m-d H:i:s',###} ]</span></td>
+
+</tr>
+</volist>
+
+</table>
+<div class="result page">{$page}</div>
+</div> 
+<script type="text/javascript">
+
+//定义表格颜色
+$(function(){
+    $("tbody>tr:odd").addClass("ou");
+    $("tbody>tr:even").addClass("dan");
+    
+    $("tbody>tr").click(
+    function(){
+        var hased=$(this).hasClass("ed");
+        if(hased){
+            $(this).removeClass("ed").find(":input").attr("checked",false);
+        }else{
+            $(this).addClass("ed").find(":input").attr("checked",true);
+        }
+    }
+    );
+        
+    
+});                       
+    </script>
+</body>
+

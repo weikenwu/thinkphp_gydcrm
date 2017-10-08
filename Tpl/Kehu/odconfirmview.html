@@ -1,0 +1,141 @@
+
+<link href="/public/images/admin.css" rel="stylesheet" type="text/css" />
+<style>
+td{font-size: 12px;}
+table{border: 0;border-collapse: collapse;} 
+tr{height: 25px;}
+.ou{background-color: #CCE;} 
+.dan{background-color: #EFEFEF;}  
+.ed{background-color: #FFFFFF;}    
+
+.help
+{
+color:red;
+}
+.overlay
+{
+position: fixed;
+z-index:100;
+_margin-top:-500px;
+top: 0px;
+left: 0px;
+height:100%;
+width:100%;
+color:red;
+    background-color:#666666;
+    filter:alpha(opacity=75);
+-moz-opacity: 0.75;
+opacity: 0.75;
+text-align:center;
+
+}
+.newwindow
+{
+background-color:#ffffff;
+position:fixed;
+z-index:102;
+border:#d8d8d8 2px solid;
+width:800px;
+
+top:300;
+left:50%;
+margin-left:-400px;
+margin-top:-200px;
+_margin-top:-350px;
+_margin-left:200px;
+color:red;
+}
+.caption{
+
+padding:20px 80px 10px 25px;
+float:left;
+}
+.close{
+height:25px;
+padding-top:5px;
+padding-right:5px;
+float:right;
+color:block;
+cursor:hand;
+}
+</style>
+<script type="text/javascript" src="/public/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    
+    function todel(){
+    if(confirm("确定删除吗?")){
+        return true;
+        }else return false;
+    } 
+    
+</script>	
+<body>
+<div>
+<b>我的订单管理<b><br>
+<!--<div class="result">可以更改配置文件中的<b>URL_MODEL</b>和<b>URL_PATHINFO_DEPR</b>参数查看分页链接的区别。</div>-->
+<div><include file="order_search" /></div>
+<table cellpadding="0" cellspacing="0" id="center">
+    <tr><th>操作</th><th>平台单号</th><th>发货时间</th><th>姓名</th><th>手机</th><th>邮箱</th><th>地址</th><th>平台来源</th><th>总额</th></tr>    
+<volist name="list" id="vo">
+<tr>
+    <td width="40"><a href="__ROOT__/admin.php/kehu/odconfirm?act=showddcp&id={$vo.order_id}" class="hello">[查看]</a></td>
+<td width="180">{$vo.outer_order_id}</td>
+<td width="110"><span style="color:gray">{$vo.last_change_time|date='y-m-d H:i:s',###}</span></td>
+<td width="45">{$vo.ship_name}</td>
+<td width="50">{$vo.ship_mobile}</td>
+<td width="60">{$vo.ship_email}</td>
+<td width="280">{$vo.ship_addr|mb_substr=0,25,'utf-8'}..</td>
+<td width="100">{$vo.terminal_name|mb_substr=0,5,'utf-8'}..</td>
+<td width="60">{$vo.payed|number_format=###, 2, '.', ''}</td>
+</tr>
+
+</volist>
+
+</table>
+
+<div class="result page">{$page}</div>
+</div> 
+
+
+   <!-- <hr></hr>
+  <div id="world">
+  
+  </div>-->
+ <script type="text/javascript"> 
+ $(document).ready(function(){
+     $(".hello").click(
+        function(){
+            
+$("body").append("<div id='newlayer' class=\"overlay\"></div>");
+$("body").append("<div id='newwindow' class=\"newwindow\"><div id='close' class='close'>close</div><div class='caption' id='hellword'>Hello World!</div></div>")
+$("#close").click(function(){
+$("#newlayer").remove();
+$("#newwindow").remove();
+});      
+       $("#hellword").load(this.href);
+            return false;     
+        });
+
+        
+         });
+//定义表格颜色
+$(function(){
+    $("#center tr:odd").addClass("ou");
+    $("#center tr:even").addClass("dan");
+    
+    $("#center tr").click(
+    function(){
+        var hased=$(this).hasClass("ed");
+        if(hased){
+            $(this).removeClass("ed").find(":input").attr("checked",false);
+        }else{
+            $(this).addClass("ed").find(":input").attr("checked",true);
+        }
+    }
+    );
+        
+    
+});         
+ </script>
+</body>
+
